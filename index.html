@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mod List Webhook</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Отправить список модов на вебхук Discord</h1>
+    <form id="webhookForm" action="/send-webhook" method="POST" enctype="multipart/form-data">
+      <label for="loader">Выберите загрузчик:</label>
+      <select name="loader" id="loader" required>
+        <option value="Fabric">Fabric</option>
+        <option value="Forge">Forge</option>
+        <option value="NeoForge">NeoForge</option>
+        <option value="Quilt">Quilt</option>
+      </select>
 
+      <label for="modsTitle">Название списка модов:</label>
+      <input type="text" id="modsTitle" name="modsTitle" required>
+
+      <label for="authorName">Имя автора:</label>
+      <input type="text" id="authorName" name="authorName" required>
+
+      <label for="authorIconUrl">URL аватара автора:</label>
+      <input type="url" id="authorIconUrl" name="authorIconUrl">
+
+      <label for="authorUrl">Ссылка на автора:</label>
+      <input type="url" id="authorUrl" name="authorUrl">
+
+      <label for="serverIp">IP сервера Minecraft:</label>
+      <input type="text" id="serverIp" name="serverIp" required>
+
+      <label for="webhookUrl">URL вебхука Discord:</label>
+      <input type="url" id="webhookUrl" name="webhookUrl" required>
+
+      <label for="modsFile">Файл с модами (необязательно):</label>
+      <input type="file" id="modsFile" name="modsFile" accept=".txt">
+
+      <label for="modsList">Или введите список модов вручную:</label>
+      <textarea id="modsList" name="modsList" rows="10"></textarea>
+
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
